@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D21FBF0F178804C000B5C921 /* DateSimulatorIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D21FBF0E178804C000B5C921 /* DateSimulatorIcon.png */; };
+		D21FBF11178804C300B5C921 /* DataSimulatorIcon@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = D21FBF10178804C300B5C921 /* DataSimulatorIcon@2X.png */; };
+		D21FBF131788065500B5C921 /* DataSimulatorIcon-ipad@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = D21FBF121788065500B5C921 /* DataSimulatorIcon-ipad@2X.png */; };
+		D21FBF151788065800B5C921 /* DataSimulatorIcon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D21FBF141788065800B5C921 /* DataSimulatorIcon-ipad.png */; };
+		D28BD1B41786DF5200512E82 /* ConventionFormula.m in Sources */ = {isa = PBXBuildFile; fileRef = D28BD1B31786DF5200512E82 /* ConventionFormula.m */; };
+		D2DED8791786BF1D006A3DDC /* FirstViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D2DED8761786BF1D006A3DDC /* FirstViewController.mm */; };
+		D2DED87A1786BF1D006A3DDC /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2DED8771786BF1D006A3DDC /* MainStoryboard_iPad.storyboard */; };
+		D2DED87B1786BF1D006A3DDC /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2DED8781786BF1D006A3DDC /* MainStoryboard_iPhone.storyboard */; };
 		D2EF96C1178420EF00AA9952 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EF96C0178420EF00AA9952 /* UIKit.framework */; };
 		D2EF96C3178420EF00AA9952 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EF96C2178420EF00AA9952 /* Foundation.framework */; };
 		D2EF96C5178420EF00AA9952 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EF96C4178420EF00AA9952 /* CoreGraphics.framework */; };
-		D2EF96CB178420EF00AA9952 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2EF96C9178420EF00AA9952 /* InfoPlist.strings */; };
 		D2EF96CD178420EF00AA9952 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF96CC178420EF00AA9952 /* main.m */; };
 		D2EF96D1178420EF00AA9952 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF96D0178420EF00AA9952 /* AppDelegate.m */; };
 		D2EF96D3178420EF00AA9952 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D2EF96D2178420EF00AA9952 /* Default.png */; };
 		D2EF96D5178420EF00AA9952 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2EF96D4178420EF00AA9952 /* Default@2x.png */; };
 		D2EF96D7178420EF00AA9952 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2EF96D6178420EF00AA9952 /* Default-568h@2x.png */; };
-		D2EF96DA178420EF00AA9952 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2EF96D8178420EF00AA9952 /* MainStoryboard_iPhone.storyboard */; };
-		D2EF96DD178420EF00AA9952 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2EF96DB178420EF00AA9952 /* MainStoryboard_iPad.storyboard */; };
-		D2EF96E0178420EF00AA9952 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF96DF178420EF00AA9952 /* FirstViewController.m */; };
 		D2EF96E2178420EF00AA9952 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = D2EF96E1178420EF00AA9952 /* first.png */; };
 		D2EF96E4178420EF00AA9952 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2EF96E3178420EF00AA9952 /* first@2x.png */; };
 		D2EF96E7178420EF00AA9952 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EF96E6178420EF00AA9952 /* SecondViewController.m */; };
@@ -27,12 +31,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D21FBF0E178804C000B5C921 /* DateSimulatorIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DateSimulatorIcon.png; path = ../DateSimulatorIcon.png; sourceTree = "<group>"; };
+		D21FBF10178804C300B5C921 /* DataSimulatorIcon@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DataSimulatorIcon@2X.png"; path = "../DataSimulatorIcon@2X.png"; sourceTree = "<group>"; };
+		D21FBF121788065500B5C921 /* DataSimulatorIcon-ipad@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DataSimulatorIcon-ipad@2X.png"; path = "../DataSimulatorIcon-ipad@2X.png"; sourceTree = "<group>"; };
+		D21FBF141788065800B5C921 /* DataSimulatorIcon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DataSimulatorIcon-ipad.png"; path = "../DataSimulatorIcon-ipad.png"; sourceTree = "<group>"; };
+		D28BD1B21786DF5200512E82 /* ConventionFormula.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConventionFormula.h; sourceTree = "<group>"; };
+		D28BD1B31786DF5200512E82 /* ConventionFormula.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConventionFormula.m; sourceTree = "<group>"; };
+		D2DED8761786BF1D006A3DDC /* FirstViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FirstViewController.mm; sourceTree = "<group>"; };
+		D2DED8771786BF1D006A3DDC /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		D2DED8781786BF1D006A3DDC /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		D2EF96BD178420EF00AA9952 /* GameDataSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameDataSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2EF96C0178420EF00AA9952 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D2EF96C2178420EF00AA9952 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2EF96C4178420EF00AA9952 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D2EF96C8178420EF00AA9952 /* GameDataSimulator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GameDataSimulator-Info.plist"; sourceTree = "<group>"; };
-		D2EF96CA178420EF00AA9952 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D2EF96CC178420EF00AA9952 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D2EF96CE178420EF00AA9952 /* GameDataSimulator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GameDataSimulator-Prefix.pch"; sourceTree = "<group>"; };
 		D2EF96CF178420EF00AA9952 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -40,10 +52,7 @@
 		D2EF96D2178420EF00AA9952 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D2EF96D4178420EF00AA9952 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D2EF96D6178420EF00AA9952 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		D2EF96D9178420EF00AA9952 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		D2EF96DC178420EF00AA9952 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		D2EF96DE178420EF00AA9952 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		D2EF96DF178420EF00AA9952 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		D2EF96E1178420EF00AA9952 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		D2EF96E3178420EF00AA9952 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		D2EF96E5178420EF00AA9952 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
@@ -96,18 +105,17 @@
 		D2EF96C6178420EF00AA9952 /* GameDataSimulator */ = {
 			isa = PBXGroup;
 			children = (
+				D2DED8771786BF1D006A3DDC /* MainStoryboard_iPad.storyboard */,
 				D2EF96CF178420EF00AA9952 /* AppDelegate.h */,
 				D2EF96D0178420EF00AA9952 /* AppDelegate.m */,
-				D2EF96D8178420EF00AA9952 /* MainStoryboard_iPhone.storyboard */,
-				D2EF96DB178420EF00AA9952 /* MainStoryboard_iPad.storyboard */,
 				D2EF96DE178420EF00AA9952 /* FirstViewController.h */,
-				D2EF96DF178420EF00AA9952 /* FirstViewController.m */,
-				D2EF96E1178420EF00AA9952 /* first.png */,
-				D2EF96E3178420EF00AA9952 /* first@2x.png */,
-				D2EF96E5178420EF00AA9952 /* SecondViewController.h */,
-				D2EF96E6178420EF00AA9952 /* SecondViewController.m */,
+				D2DED8761786BF1D006A3DDC /* FirstViewController.mm */,
+				D28BD1B21786DF5200512E82 /* ConventionFormula.h */,
+				D28BD1B31786DF5200512E82 /* ConventionFormula.m */,
 				D2EF96E8178420EF00AA9952 /* second.png */,
 				D2EF96EA178420EF00AA9952 /* second@2x.png */,
+				D2EF96E1178420EF00AA9952 /* first.png */,
+				D2EF96E3178420EF00AA9952 /* first@2x.png */,
 				D2EF96C7178420EF00AA9952 /* Supporting Files */,
 			);
 			path = GameDataSimulator;
@@ -116,8 +124,14 @@
 		D2EF96C7178420EF00AA9952 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D2EF96E5178420EF00AA9952 /* SecondViewController.h */,
+				D2EF96E6178420EF00AA9952 /* SecondViewController.m */,
+				D2DED8781786BF1D006A3DDC /* MainStoryboard_iPhone.storyboard */,
+				D21FBF141788065800B5C921 /* DataSimulatorIcon-ipad.png */,
+				D21FBF121788065500B5C921 /* DataSimulatorIcon-ipad@2X.png */,
+				D21FBF10178804C300B5C921 /* DataSimulatorIcon@2X.png */,
+				D21FBF0E178804C000B5C921 /* DateSimulatorIcon.png */,
 				D2EF96C8178420EF00AA9952 /* GameDataSimulator-Info.plist */,
-				D2EF96C9178420EF00AA9952 /* InfoPlist.strings */,
 				D2EF96CC178420EF00AA9952 /* main.m */,
 				D2EF96CE178420EF00AA9952 /* GameDataSimulator-Prefix.pch */,
 				D2EF96D2178420EF00AA9952 /* Default.png */,
@@ -178,16 +192,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2EF96CB178420EF00AA9952 /* InfoPlist.strings in Resources */,
 				D2EF96D3178420EF00AA9952 /* Default.png in Resources */,
 				D2EF96D5178420EF00AA9952 /* Default@2x.png in Resources */,
 				D2EF96D7178420EF00AA9952 /* Default-568h@2x.png in Resources */,
-				D2EF96DA178420EF00AA9952 /* MainStoryboard_iPhone.storyboard in Resources */,
-				D2EF96DD178420EF00AA9952 /* MainStoryboard_iPad.storyboard in Resources */,
 				D2EF96E2178420EF00AA9952 /* first.png in Resources */,
 				D2EF96E4178420EF00AA9952 /* first@2x.png in Resources */,
 				D2EF96E9178420EF00AA9952 /* second.png in Resources */,
 				D2EF96EB178420EF00AA9952 /* second@2x.png in Resources */,
+				D2DED87A1786BF1D006A3DDC /* MainStoryboard_iPad.storyboard in Resources */,
+				D2DED87B1786BF1D006A3DDC /* MainStoryboard_iPhone.storyboard in Resources */,
+				D21FBF0F178804C000B5C921 /* DateSimulatorIcon.png in Resources */,
+				D21FBF11178804C300B5C921 /* DataSimulatorIcon@2X.png in Resources */,
+				D21FBF131788065500B5C921 /* DataSimulatorIcon-ipad@2X.png in Resources */,
+				D21FBF151788065800B5C921 /* DataSimulatorIcon-ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,39 +217,13 @@
 			files = (
 				D2EF96CD178420EF00AA9952 /* main.m in Sources */,
 				D2EF96D1178420EF00AA9952 /* AppDelegate.m in Sources */,
-				D2EF96E0178420EF00AA9952 /* FirstViewController.m in Sources */,
 				D2EF96E7178420EF00AA9952 /* SecondViewController.m in Sources */,
+				D2DED8791786BF1D006A3DDC /* FirstViewController.mm in Sources */,
+				D28BD1B41786DF5200512E82 /* ConventionFormula.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		D2EF96C9178420EF00AA9952 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D2EF96CA178420EF00AA9952 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		D2EF96D8178420EF00AA9952 /* MainStoryboard_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D2EF96D9178420EF00AA9952 /* en */,
-			);
-			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		D2EF96DB178420EF00AA9952 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D2EF96DC178420EF00AA9952 /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D2EF96EC178420EF00AA9952 /* Debug */ = {
@@ -299,7 +290,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GameDataSimulator/GameDataSimulator-Prefix.pch";
 				INFOPLIST_FILE = "GameDataSimulator/GameDataSimulator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -310,7 +303,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GameDataSimulator/GameDataSimulator-Prefix.pch";
 				INFOPLIST_FILE = "GameDataSimulator/GameDataSimulator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -334,6 +329,7 @@
 				D2EF96F0178420EF00AA9952 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
