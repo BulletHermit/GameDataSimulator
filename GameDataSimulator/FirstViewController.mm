@@ -14,34 +14,20 @@
 @end
 
 @implementation FirstViewController
-@synthesize offAgility,offHP,offLuck,offMagicalAttack,offMP,offState,offStrength,offWillpower;
-@synthesize defAgility,defHP,defLuck,defMagicalAttack,defMP,defState,defStrength,defWillpower;
+@synthesize offLevel,offAgility,offHP,offLuck,offMagicalAttack,offMP,offState,offStrength,offWillpower;
+@synthesize defLevel,defAgility,defHP,defLuck,defMagicalAttack,defMP,defState,defStrength,defWillpower;
 @synthesize result;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    conventionFormula=[[ConventionFormula alloc] init] ;
+    offRole=[[Role alloc] init] ;
+    defRole = [[Role alloc] init];
     resultString = @"战斗开始！\n";
     isStrikeback=YES;
     round=1;
 	// Do ny additional setup after loading the view, typically from a nib.
-    offStrength.text=[NSString stringWithFormat:@"15"];
-    offWillpower.text=[NSString stringWithFormat:@"15"];
-    offAgility.text=[NSString stringWithFormat:@"15"];
-    offLuck.text=[NSString stringWithFormat:@"15"];
-    offMagicalAttack.text=[NSString stringWithFormat:@"15"];
-    
-    defStrength.text=[NSString stringWithFormat:@"15"];
-    defWillpower.text=[NSString stringWithFormat:@"15"];
-    defAgility.text=[NSString stringWithFormat:@"15"];
-    defLuck.text=[NSString stringWithFormat:@"15"];
-    defMagicalAttack.text=[NSString stringWithFormat:@"15"];
-    
-    offHP.text= [NSString stringWithFormat:@"%.1f",[conventionFormula HPFromStength:15]];
-    defHP.text= [NSString stringWithFormat:@"%.1f",[conventionFormula HPFromStength:15]];
-    offMP.text= [NSString stringWithFormat:@"%.1f",[conventionFormula HPFromStength:15]];
-    defMP.text= [NSString stringWithFormat:@"%.1f",[conventionFormula HPFromStength:15]];
+
     
 }
 
@@ -62,117 +48,6 @@
         [self strikeback];
     }
 }
--(void) strike
-{
-    //1.judge the evsion
-    float defAGI = [defAgility.text floatValue];
-    float defEv = [conventionFormula EvFromAgility:defAGI];
-    float random = arc4random()%100/100.0;
-    
-    if (random <=defEv) {
-        
-        resultString=[resultString stringByAppendingFormat:@"\n守方闪避了攻方的普通攻击"];
-        result.text = resultString;
-        return;
-    }
-    
-    //2.get attack value
-    float offSTR = [offStrength.text floatValue];
-    float offATK = [conventionFormula ATKFromStrength:offSTR];
-    float actualATK = offATK;
-    //3.judge the crical attack
-    random = arc4random()%100/100.0;
-    float offAGI = [offAgility.text floatValue];
-    float offCRI_R = [conventionFormula CRI_RFromAgility:offAGI];
-    NSLog(@"offCir_r:%.2f",offCRI_R);
-    NSLog(@"%.2f",random);
-    if (random<=offCRI_R) {
-        float offCRI = [conventionFormula CRIFromStrength:offSTR];
-        actualATK = actualATK*offCRI;
-        resultString=[resultString stringByAppendingFormat:@"\n攻方暴击：%.2f",actualATK];
-    }
-    else
-    {
-        resultString=[resultString stringByAppendingFormat:@"\n攻方普通攻击：%.2f",actualATK ];
-        
-    }
-    
-    //4.the value minus defend to get the delta HP
-    float defDEF=[conventionFormula DEFFromAgility:defAGI];
-    float deltaHP = actualATK - defDEF;
-    if (deltaHP<0) {
-        deltaHP=0;
-    }
-    resultString=[resultString stringByAppendingFormat:@"\n攻方伤害：%.2f,守方防御:%.2f",actualATK,defDEF];
-    
-    //5.get the current HP
-    float curHP=[defHP.text floatValue] - deltaHP;
-    if (curHP<=0) {
-        resultString = [resultString stringByAppendingFormat:@"\n守方翘辫子" ];
-        result.text = resultString;
-        defHP.text = [NSString stringWithFormat:@"0" ];
-        return;
-    }
-    defHP.text = [NSString stringWithFormat:@"%f",curHP ];
-    resultString = [resultString stringByAppendingFormat:@"\n守方减血：%.2f",deltaHP ];
-    result.text = resultString;
-}
--(void) strikeback
-{
-    resultString=[resultString stringByAppendingFormat:@"\n守方反击！"];
-    //1.judge the defender evsion
-    float offAGI = [offAgility.text floatValue];
-    float offEv = [conventionFormula EvFromAgility:offAGI];
-    float random = arc4random()%100/100.0;
-    
-    if (random <=offEv) {
-        
-        resultString=[resultString stringByAppendingFormat:@"\n攻方闪避了攻方的普通攻击"];
-        result.text = resultString;
-        return;
-    }
-    
-    //2.get attack value
-    float defSTR = [defStrength.text floatValue];
-    float defATK = [conventionFormula ATKFromStrength:defSTR];
-    float actualATK = defATK;
-    //3.judge the crical attack
-    random = arc4random()%100/100.0;
-    float defAGI = [defAgility.text floatValue];
-    float defCRI_R = [conventionFormula CRI_RFromAgility:defAGI];
-
-    if (random<=defCRI_R) {
-        float defCRI = [conventionFormula CRIFromStrength:defSTR];
-        actualATK = actualATK*defCRI;
-        resultString=[resultString stringByAppendingFormat:@"\n守方暴击：%.2f",actualATK];
-    }
-    else
-    {
-        resultString=[resultString stringByAppendingFormat:@"\n守方普通攻击：%.2f",actualATK ];
-        
-    }
-    
-    //4.the value minus defend to get the delta HP
-    float offDEF=[conventionFormula DEFFromAgility:offAGI];
-    float deltaHP = actualATK*decayRatio - offDEF;
-    if (deltaHP<0) {
-        deltaHP=0;
-    }
-    resultString=[resultString stringByAppendingFormat:@"\n守方反击伤害：%.2f,攻方防御:%.2f",actualATK*decayRatio,offDEF];
-    
-    //5.get the current HP
-    float curHP=[offHP.text floatValue] - deltaHP;
-    if (curHP<=0) {
-        resultString = [resultString stringByAppendingFormat:@"\n攻方翘辫子" ];
-        result.text = resultString;
-        offHP.text = [NSString stringWithFormat:@"0" ];
-        return;
-    }
-    offHP.text = [NSString stringWithFormat:@"%f",curHP ];
-    resultString = [resultString stringByAppendingFormat:@"\n攻方减血：%.2f",deltaHP ];
-    result.text = resultString;
-
-}
 -(IBAction)magicalAttack:(id)sender
 {
 
@@ -191,14 +66,14 @@
     }
         resultString = [resultString stringByAppendingFormat:@"\n第%d回合",round++];
     //3.get the MATK value and composite
-    float offWIL = [offWillpower.text floatValue];
-    float offMATK = [conventionFormula MATKFromWillpower:offWIL];
+
+    float offMSTR =offRole.MSTR;
     
-    float actualATK = offMAG*offMATK;
+    float actualATK = offMAG*offMSTR;
 
     //4.the value minus magical defend to get the delta HP
-    float defWIL = [defWillpower.text floatValue];
-    float defMDEF=[conventionFormula MDEFFromWillpower:defWIL];
+
+    float defMDEF=defRole.MDEF;
     float deltaHP = actualATK - defMDEF;
     if (deltaHP<0) {
         deltaHP=0;
@@ -224,16 +99,183 @@
 {
     resultString=@"奇奇怪怪的东西又要来了哟~";
     result.text = resultString;
-    float offStr = [offStrength.text floatValue];
-    float offWIL= [offWillpower.text floatValue];
-    float defStr = [defStrength.text floatValue];
-    float defWIL=[defWillpower.text floatValue];
-    offHP.text= [NSString stringWithFormat:@"%.1f",[conventionFormula HPFromStength:offStr]];
-    defHP.text= [NSString stringWithFormat:@"%.1f",[conventionFormula HPFromStength:defStr]];
-    offMP.text= [NSString stringWithFormat:@"%.1f",[conventionFormula HPFromStength:offWIL]];
-    defMP.text= [NSString stringWithFormat:@"%.1f",[conventionFormula HPFromStength:defWIL]];
+    [offRole resetHPMP];
+    [defRole resetHPMP];
+    offHP.text=[NSString stringWithFormat:@"%d",offRole.HP];
+    defHP.text= [NSString stringWithFormat:@"%d",defRole.HP];
+    offMP.text= [NSString stringWithFormat:@"%d",offRole.MP];
+    defMP.text= [NSString stringWithFormat:@"%d",defRole.MP];
     round=1;
 }
+-(IBAction)setAttribute:(id)sender
+{
+    float offInitLv = [offLevel.text floatValue];
+    float offInitSTR = [offStrength.text floatValue];
+    float offInitAGI =[offAgility.text floatValue];
+    float offInitWIL= [offWillpower.text floatValue];
+    float offInitLuc = [offLuck.text floatValue];
+    [offRole setInitDataWithLevel:offInitLv str:offInitSTR agi:offInitAGI wil:offInitWIL luc:offInitLuc];
+    
+    float defInitLv = [defLevel.text floatValue];
+    float defInitSTR = [defStrength.text floatValue];
+    float defInitAGI =[defAgility.text floatValue];
+    float defInitWIL=[defWillpower.text floatValue];
+    float defInitLuc = [defLuck.text floatValue];
+    [defRole setInitDataWithLevel:defInitLv str:defInitSTR agi:defInitAGI wil:defInitWIL luc:defInitLuc];
+    
+    [self updateAttribute];
+    
+    
+}
+-(IBAction)displayOff:(id)sender
+{
+
+    
+    NSString* string = [NSString stringWithFormat:@"ATK:%d   CRI:%f   HPR:%d \nDEF:%d   Ev:%f   CRIR:%f\nMDEF:%d   MSTR:%d",offRole.ATK,offRole.CRI,offRole.HPR,offRole.DEF,offRole.Ev,offRole.CRIR,offRole.MDEF,offRole.MSTR];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Offensive" message:string delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    
+}
+-(IBAction)displayDef:(id)sender
+{
+    NSString* string = [NSString stringWithFormat:@"ATK:%d   CRI:%f   HPR:%d \nDEF:%d   Ev:%f   CRIR:%f\nMDEF:%d   MSTR:%d",defRole.ATK,defRole.CRI,defRole.HPR,defRole.DEF,defRole.Ev,defRole.CRIR,defRole.MDEF,defRole.MSTR];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Defensive" message:string delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+}
+#pragma Helper
+-(void) updateAttribute
+{
+    offHP.text=[NSString stringWithFormat:@"%d",offRole.HP];
+    defHP.text= [NSString stringWithFormat:@"%d",defRole.HP];
+    offMP.text= [NSString stringWithFormat:@"%d",offRole.MP];
+    defMP.text= [NSString stringWithFormat:@"%d",defRole.MP];
+    
+    offLevel.text = [NSString stringWithFormat:@"%d",offRole.LV];
+    offStrength.text = [NSString stringWithFormat:@"%d",offRole.STR];
+    offAgility.text = [NSString stringWithFormat:@"%d",offRole.AGI];
+    offWillpower.text = [NSString stringWithFormat:@"%d",offRole.WIL];
+    offLuck.text = [NSString stringWithFormat:@"%d",offRole.LUCK];
+    
+    defLevel.text = [NSString stringWithFormat:@"%d",defRole.LV];
+    defStrength.text = [NSString stringWithFormat:@"%d",defRole.STR];
+   defAgility.text = [NSString stringWithFormat:@"%d",defRole.AGI];
+    defWillpower.text = [NSString stringWithFormat:@"%d",defRole.WIL];
+    defLuck.text = [NSString stringWithFormat:@"%d",defRole.LUCK];
+}
+-(void) strike
+{
+    //1.judge the evsion
+    
+    float defEv = defRole.Ev/100.0;
+    
+    float random = arc4random()%100/100.0;
+    
+    if (random <=defEv) {
+        
+        resultString=[resultString stringByAppendingFormat:@"\n守方闪避了攻方的普通攻击"];
+        result.text = resultString;
+        return;
+    }
+    
+    //2.get attack value
+    
+    float offATK = offRole.ATK;
+    float actualATK = offATK;
+    //3.judge the crical attack
+    random = arc4random()%100/100.0;
+    float offCRI_R = offRole.CRIR/100.0;
+    NSLog(@"offCir_r:%.2f",offCRI_R);
+    NSLog(@"%.2f",random);
+    if (random<=offCRI_R) {
+        float offCRI = offRole.CRI;
+        actualATK = actualATK*offCRI/100.0;
+        resultString=[resultString stringByAppendingFormat:@"\n攻方暴击：%.2f",actualATK];
+    }
+    else
+    {
+        resultString=[resultString stringByAppendingFormat:@"\n攻方普通攻击：%.2f",actualATK ];
+        
+    }
+    
+    //4.the value minus defend to get the delta HP
+    float defDEF=defRole.DEF;
+    //require a float value judged by weapon or kit
+    float deltaHP =( actualATK - defDEF*10)*2;
+    if (deltaHP<0) {
+        deltaHP=0;
+    }
+    resultString=[resultString stringByAppendingFormat:@"\n攻方伤害：%.2f,守方防御:%.2f",actualATK,defDEF];
+    
+    //5.get the current HP
+    float curHP=[defHP.text floatValue] - deltaHP;
+    if (curHP<=0) {
+        resultString = [resultString stringByAppendingFormat:@"\n守方翘辫子" ];
+        result.text = resultString;
+        defHP.text = [NSString stringWithFormat:@"0" ];
+        return;
+    }
+    defHP.text = [NSString stringWithFormat:@"%f",curHP ];
+    resultString = [resultString stringByAppendingFormat:@"\n守方减血：%.2f",deltaHP ];
+    result.text = resultString;
+}
+
+-(void) strikeback
+{
+    resultString=[resultString stringByAppendingFormat:@"\n守方反击！"];
+    //1.judge the defender evsion
+    
+    float offEv = offRole.Ev/100.0;
+    float random = arc4random()%100/100.0;
+    
+    if (random <=offEv) {
+        
+        resultString=[resultString stringByAppendingFormat:@"\n攻方闪避了攻方的普通攻击"];
+        result.text = resultString;
+        return;
+    }
+    
+    //2.get attack value
+    
+    float defATK = defRole.ATK;
+    float actualATK = defATK;
+    //3.judge the crical attack
+    random = arc4random()%100/100.0;
+    
+    float defCRI_R = defRole.CRIR/100.0;
+    
+    if (random<=defCRI_R) {
+        float defCRI = defRole.CRI;
+        actualATK = actualATK*defCRI/100.0;
+        resultString=[resultString stringByAppendingFormat:@"\n守方暴击：%.2f",actualATK];
+    }
+    else
+    {
+        resultString=[resultString stringByAppendingFormat:@"\n守方普通攻击：%.2f",actualATK ];
+        
+    }
+    
+    //4.the value minus defend to get the delta HP
+    float offDEF=offRole.DEF;
+    float deltaHP = (actualATK*decayRatio - offDEF*10)*2;
+    if (deltaHP<0) {
+        deltaHP=0;
+    }
+    resultString=[resultString stringByAppendingFormat:@"\n守方反击伤害：%.2f,攻方防御:%.2f",actualATK*decayRatio,offDEF];
+    
+    //5.get the current HP
+    float curHP=[offHP.text floatValue] - deltaHP;
+    if (curHP<=0) {
+        resultString = [resultString stringByAppendingFormat:@"\n攻方翘辫子" ];
+        result.text = resultString;
+        offHP.text = [NSString stringWithFormat:@"0" ];
+        return;
+    }
+    offHP.text = [NSString stringWithFormat:@"%f",curHP ];
+    resultString = [resultString stringByAppendingFormat:@"\n攻方减血：%.2f",deltaHP ];
+    result.text = resultString;
+    
+}
+
 // 触摸背景，关闭键盘
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     UITouch *touch = [touches anyObject];

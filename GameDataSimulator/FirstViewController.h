@@ -7,19 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ConventionFormula.h"
+#import "Role.h"
 
 
 @interface FirstViewController : UIViewController
 {
 
     NSString* resultString;
-    ConventionFormula* conventionFormula;
+    Role* offRole;
+    Role* defRole;
     int round;
     bool isStrikeback;
     
 }
 @property (strong,nonatomic) IBOutlet UITextView* result;
+
+@property (strong,nonatomic) IBOutlet UITextField* offLevel;
+@property (strong,nonatomic) IBOutlet UITextField* defLevel;
 
 @property (strong,nonatomic) IBOutlet UITextField* offStrength;
 @property (strong,nonatomic) IBOutlet UITextField* offAgility;

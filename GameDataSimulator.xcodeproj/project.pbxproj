@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CFCD671178FAB62007B5CDE /* Strength.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCD670178FAB62007B5CDE /* Strength.m */; };
 		D21FBF0F178804C000B5C921 /* DateSimulatorIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D21FBF0E178804C000B5C921 /* DateSimulatorIcon.png */; };
 		D21FBF11178804C300B5C921 /* DataSimulatorIcon@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = D21FBF10178804C300B5C921 /* DataSimulatorIcon@2X.png */; };
 		D21FBF131788065500B5C921 /* DataSimulatorIcon-ipad@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = D21FBF121788065500B5C921 /* DataSimulatorIcon-ipad@2X.png */; };
 		D21FBF151788065800B5C921 /* DataSimulatorIcon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D21FBF141788065800B5C921 /* DataSimulatorIcon-ipad.png */; };
-		D28BD1B41786DF5200512E82 /* ConventionFormula.m in Sources */ = {isa = PBXBuildFile; fileRef = D28BD1B31786DF5200512E82 /* ConventionFormula.m */; };
+		D28BD1B41786DF5200512E82 /* Role.mm in Sources */ = {isa = PBXBuildFile; fileRef = D28BD1B31786DF5200512E82 /* Role.mm */; };
 		D2DED8791786BF1D006A3DDC /* FirstViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D2DED8761786BF1D006A3DDC /* FirstViewController.mm */; };
 		D2DED87A1786BF1D006A3DDC /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2DED8771786BF1D006A3DDC /* MainStoryboard_iPad.storyboard */; };
 		D2DED87B1786BF1D006A3DDC /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2DED8781786BF1D006A3DDC /* MainStoryboard_iPhone.storyboard */; };
@@ -31,12 +32,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4CFCD66F178FAB62007B5CDE /* Strength.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Strength.h; sourceTree = "<group>"; };
+		4CFCD670178FAB62007B5CDE /* Strength.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Strength.m; sourceTree = "<group>"; };
 		D21FBF0E178804C000B5C921 /* DateSimulatorIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DateSimulatorIcon.png; path = ../DateSimulatorIcon.png; sourceTree = "<group>"; };
 		D21FBF10178804C300B5C921 /* DataSimulatorIcon@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DataSimulatorIcon@2X.png"; path = "../DataSimulatorIcon@2X.png"; sourceTree = "<group>"; };
 		D21FBF121788065500B5C921 /* DataSimulatorIcon-ipad@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DataSimulatorIcon-ipad@2X.png"; path = "../DataSimulatorIcon-ipad@2X.png"; sourceTree = "<group>"; };
 		D21FBF141788065800B5C921 /* DataSimulatorIcon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DataSimulatorIcon-ipad.png"; path = "../DataSimulatorIcon-ipad.png"; sourceTree = "<group>"; };
-		D28BD1B21786DF5200512E82 /* ConventionFormula.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConventionFormula.h; sourceTree = "<group>"; };
-		D28BD1B31786DF5200512E82 /* ConventionFormula.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConventionFormula.m; sourceTree = "<group>"; };
+		D28BD1B21786DF5200512E82 /* Role.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Role.h; sourceTree = "<group>"; };
+		D28BD1B31786DF5200512E82 /* Role.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Role.mm; sourceTree = "<group>"; };
 		D2DED8761786BF1D006A3DDC /* FirstViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FirstViewController.mm; sourceTree = "<group>"; };
 		D2DED8771786BF1D006A3DDC /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		D2DED8781786BF1D006A3DDC /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
@@ -110,13 +113,15 @@
 				D2EF96D0178420EF00AA9952 /* AppDelegate.m */,
 				D2EF96DE178420EF00AA9952 /* FirstViewController.h */,
 				D2DED8761786BF1D006A3DDC /* FirstViewController.mm */,
-				D28BD1B21786DF5200512E82 /* ConventionFormula.h */,
-				D28BD1B31786DF5200512E82 /* ConventionFormula.m */,
+				D28BD1B21786DF5200512E82 /* Role.h */,
+				D28BD1B31786DF5200512E82 /* Role.mm */,
 				D2EF96E8178420EF00AA9952 /* second.png */,
 				D2EF96EA178420EF00AA9952 /* second@2x.png */,
 				D2EF96E1178420EF00AA9952 /* first.png */,
 				D2EF96E3178420EF00AA9952 /* first@2x.png */,
 				D2EF96C7178420EF00AA9952 /* Supporting Files */,
+				4CFCD66F178FAB62007B5CDE /* Strength.h */,
+				4CFCD670178FAB62007B5CDE /* Strength.m */,
 			);
 			path = GameDataSimulator;
 			sourceTree = "<group>";
@@ -219,7 +224,8 @@
 				D2EF96D1178420EF00AA9952 /* AppDelegate.m in Sources */,
 				D2EF96E7178420EF00AA9952 /* SecondViewController.m in Sources */,
 				D2DED8791786BF1D006A3DDC /* FirstViewController.mm in Sources */,
-				D28BD1B41786DF5200512E82 /* ConventionFormula.m in Sources */,
+				D28BD1B41786DF5200512E82 /* Role.mm in Sources */,
+				4CFCD671178FAB62007B5CDE /* Strength.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
